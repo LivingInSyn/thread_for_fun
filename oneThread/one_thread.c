@@ -9,24 +9,23 @@ main()
 	
 	clock_t start,stop;
 	start = clock();
-	int j;
-	for(j=0;j<100;j++)
+	int j;	
+	for(j=0;j<1000;j++)
 	{
-		total = 0;
 		int i = 0;
-		int sumSq = 0;
 		for(i=0;i<10000;i++)
 		{
 			total = total + array[i];
-			sumSq = sumSq + (array[i]*array[i]);
+			//sumSq = sumSq + (array[i]*array[i]);
 		}
-		double variance = (sumSq - (total*total)/10000)/(9999);
-		printf("Variance is %f on run %i\n",variance,j);
+		//double variance = (sumSq - (total*total)/10000)/(9999);
+		//printf("Variance is %f on run %i\n",variance,j);
 	}
 	stop = clock();
 	
 	double t = (double)(stop - start)/CLOCKS_PER_SEC;
 	
+	printf("the total was %d\n", total);
 	printf("the time to run was %f\n", t);
 	
 		
